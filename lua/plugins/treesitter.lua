@@ -8,13 +8,13 @@ return {
             vim.notify("nvim-treesitter.configs not available yet", vim.log.levels.WARN)
             return
         end
-
         configs.setup({
             ensure_installed = {
                 "lua",
                 "vim",
                 "vimdoc",
                 "go",
+                "haskell",
                 "cpp",
                 "java",
                 "gomod",

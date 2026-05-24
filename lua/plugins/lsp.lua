@@ -7,7 +7,7 @@ return {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "gopls", "lua_ls", "jdtls", "clangd", "kotlin_language_server" },
+                ensure_installed = { "gopls", "lua_ls", "jdtls", "clangd", "kotlin_language_server", "hls", "ocamllsp" },
                 automatic_enable = true,
             })
         end,
@@ -23,6 +23,21 @@ return {
                 update_in_insert = true,
                 severity_sort = true,
             })
+
+
+            vim.lsp.config['hls'] = {
+                filetypes = { "haskell", "lhaskell", "cabal" },
+            }
+
+            vim.lsp.config['skibideo'] = {
+                cmd = { '/Users/kukiutihin/projects/skibideo/main', '--debug', '--compiler', '/Users/kukiutihin/projects/1F/_build/default/bin/main.exe' },
+                filetypes = { '1f' },
+                root_markers = { '.git' },
+
+                settings = {
+                }
+
+            }
 
             vim.lsp.config("lua_ls", {
                 settings = {
@@ -47,7 +62,8 @@ return {
                 },
             })
 
-            vim.lsp.enable({ "lua_ls", "gopls" })
+            vim.lsp.enable({ "lua_ls", "gopls", "skibideo", "ocamllsp", "hsl", "kotlin_language_server", "jdtls",
+                "clangd" })
         end,
     },
 }

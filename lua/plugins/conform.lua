@@ -18,7 +18,8 @@ return {
             go = { "goimports", "gofmt" },
             java = { "google-java-format" },
             kotlin = { "ktlint" },
-            cpp = { "clang_format" }
+            cpp = { "clang_format" },
+            haskell = { "ormolu" }
         },
         formatters = {
             ["google-java-format"] = {
