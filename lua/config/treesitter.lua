@@ -1,0 +1,23 @@
+return {
+    ensure_installed = {
+        "vim",
+        "lua",
+        "vimdoc",
+        "bash",
+        "regex",
+        "html",
+        "css",
+        "markdown",
+        "markdown_inline",
+        "go",
+        "java",
+        "kotlin",
+        "rust",
+        "haskell",
+        "cpp",
+        "typst",
+        "1f",
+    },
+    highlight = { enable = true },
+    indent = { enable = true },
+}

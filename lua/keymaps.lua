@@ -3,7 +3,7 @@ local k = vim.keymap.set
 -- turn off move right
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
--- k("n", "<leader>e", "<cmd>Oil<CR>", { silent = true })
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostics
 k("n", "<leader>q", function()

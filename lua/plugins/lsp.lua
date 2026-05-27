@@ -7,7 +7,7 @@ return {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "gopls", "lua_ls", "jdtls", "clangd", "kotlin_language_server", "hls", "ocamllsp" },
+                ensure_installed = { "gopls", "lua_ls", "jdtls", "clangd", "kotlin_lsp", "hls", "ocamllsp" },
                 automatic_enable = true,
             })
         end,
@@ -30,7 +30,7 @@ return {
             }
 
             vim.lsp.config['skibideo'] = {
-                cmd = { '/Users/kukiutihin/projects/skibideo/main', '--debug', '--compiler', '/Users/kukiutihin/projects/1F/_build/default/bin/main.exe' },
+                cmd = { '/Users/kukiutihin/projects/skibideoml/_build/default/bin/main.exe', '--debug', '--compiler', '/Users/kukiutihin/projects/1F/_build/default/bin/main.exe' },
                 filetypes = { '1f' },
                 root_markers = { '.git' },
 
@@ -62,7 +62,7 @@ return {
                 },
             })
 
-            vim.lsp.enable({ "lua_ls", "gopls", "skibideo", "ocamllsp", "hsl", "kotlin_language_server", "jdtls",
+            vim.lsp.enable({ "lua_ls", "gopls", "skibideo", "ocamllsp", "hsl", "kotlin_lsp", "jdtls",
                 "clangd" })
         end,
     },

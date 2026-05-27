@@ -2,33 +2,16 @@ return {
     "nvim-treesitter/nvim-treesitter",
     lazy = false,
     build = ":TSUpdate",
-    config = function()
-        local ok, configs = pcall(require, "nvim-treesitter.configs")
-        if not ok then
-            vim.notify("nvim-treesitter.configs not available yet", vim.log.levels.WARN)
-            return
+    opts = require "config.treesitter",
+    config = function(_, opts)
+        local function try_start_treesitter(buf)
+            pcall(vim.treesitter.start, buf)
         end
-        configs.setup({
-            ensure_installed = {
-                "lua",
-                "vim",
-                "vimdoc",
-                "go",
-                "haskell",
-                "cpp",
-                "java",
-                "gomod",
-                "gosum",
-                "gowork",
-                "gotmpl",
-            },
-            sync_install = false,
-            auto_install = true,
-            highlight = {
-                enable = true,
-                additional_vim_regex_highlighting = false,
-            },
-            indent = { enable = true },
+
+        vim.api.nvim_create_autocmd("FileType", {
+            callback = function(args)
+                try_start_treesitter(args.buf)
+            end,
         })
     end,
 }
