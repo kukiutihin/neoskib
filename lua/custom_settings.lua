@@ -17,3 +17,7 @@ vim.lsp.handlers["window/showMessage"] = function(err, result, ctx, config)
 
 	default_handler(err, result, ctx, config)
 end
+
+vim.opt.keymap = "russian-jcukenwin"
+vim.opt.iminsert = 0
+vim.opt.imsearch = -1

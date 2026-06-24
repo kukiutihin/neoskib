@@ -19,7 +19,7 @@ return {
 			java = { "google-java-format" },
 			kotlin = { "ktlint" },
 			cpp = { "clang_format" },
-			haskell = { "ormolu" },
+			haskell = { "fourmolu" },
 		},
 		formatters = {
 			["google-java-format"] = {
@@ -27,6 +27,10 @@ return {
 			},
 			clang_format = {
 				prepend_args = { "--style=file", "--fallback-style=Google" },
+			},
+			fourmolu = {
+				command = "fourmolu",
+				prepend_args = { "--indentation", "2" },
 			},
 		},
 		format_on_save = {
