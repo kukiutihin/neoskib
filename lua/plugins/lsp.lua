@@ -22,6 +22,7 @@ return {
 					"stylua",
 					"tinymist",
 					"typstyle",
+					"sql-formatter",
 				},
 				auto_update = false,
 				run_on_start = false,
