@@ -22,7 +22,4 @@ v.guicursor = "i:block"
 v.showmode = false
 v.laststatus = 3
 
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
-
 vim.o.timeoutlen = 300

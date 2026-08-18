@@ -1,71 +1,42 @@
 return {
 	{
 		"williamboman/mason.nvim",
-		config = true,
+		config = function()
+			require("mason").setup()
+		end,
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
+		dependencies = { "williamboman/mason.nvim" },
 		config = function()
-			require("mason-lspconfig").setup({
+			require("mason-lspconfig").setup({ automatic_installation = true })
+		end,
+	},
+	{
+		"WhoIsSethDaniel/mason-tool-installer",
+		dependencies = { "williamboman/mason.nvim" },
+		config = function()
+			require("mason-tool-installer").setup({
 				ensure_installed = {
-					"gopls",
-					"lua_ls",
-					"jdtls",
-					"rust_analyzer",
-					"clangd",
-					"kotlin_lsp",
-					"ocamllsp",
+					"lua-language-server",
+					"stylua",
+					"tinymist",
+					"typstyle",
 				},
-				automatic_enable = true,
+				auto_update = false,
+				run_on_start = false,
 			})
 		end,
 	},
 	{
 		"neovim/nvim-lspconfig",
-		dependencies = { "williamboman/mason-lspconfig.nvim" },
+		dependencies = {
+			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
+			"WhoIsSethDaniel/mason-tool-installer",
+		},
 		config = function()
-			vim.diagnostic.config({
-				virtual_text = false,
-				signs = true,
-				underline = true,
-				update_in_insert = true,
-				severity_sort = true,
-			})
-
-			vim.lsp.config("lua_ls", {
-				settings = {
-					Lua = {
-						diagnostics = { globals = { "vim" } },
-					},
-				},
-			})
-
-			vim.lsp.config["hls"] = {
-				filetypes = { "haskell", "lhaskell", "cabal" },
-				settings = {
-					haskell = {
-						formattingProvider = "none",
-					},
-				},
-			}
-
-			vim.lsp.config("gopls", {
-				settings = {
-					gopls = {
-						analyses = {
-							unusedparams = true,
-							shadow = true,
-						},
-						staticcheck = true,
-					},
-				},
-				flags = {
-					debounce_text_changes = 150,
-				},
-			})
-			vim.lsp.enable({
-				"hls",
-			})
+			require("config.lsp").setup()
 		end,
 	},
 }
