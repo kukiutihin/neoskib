@@ -48,16 +48,18 @@ function M.setup()
 	-- Default setup for other servers - expect binaries available in PATH (managed by Nix)
 	local servers = {
 		"jdtls",
+		"lua_ls", -- installed by default
+		"hls",
+		"gopls",
 		"rust_analyzer",
 		"clangd",
 		"kotlin_language_server",
 		"ocamllsp",
 		"tinymist", -- installed by default
 	}
+
 	for _, srv in ipairs(servers) do
-		pcall(function()
-			vim.lsp.config(srv, {})
-		end)
+		vim.lsp.enable(srv)
 	end
 end
 
