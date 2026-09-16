@@ -63,3 +63,16 @@ vim.keymap.set("n", "<leader>tG", function()
 end, { desc = "Last page" })
 
 vim.keymap.set("i", "<A-z>", "<C-^>", { desc = "toggle RU/EN layout" })
+
+-- nvim-dap
+
+local dap = require("dap")
+local dapui = require("dapui")
+
+vim.keymap.set("n", "<leader>du", dapui.toggle, { desc = "DAP UI: Toggle" })
+vim.keymap.set({ "n", "v" }, "<leader>de", dapui.eval, { desc = "DAP UI: Eval" })
+vim.keymap.set("n", "<leader>ct", dap.continue, { desc = "DAP: Continue" })
+vim.keymap.set("n", "<leader>bb", dap.toggle_breakpoint, { desc = "DAP: Toggle Breakpoint" })
+vim.keymap.set("n", "<leader>so", dap.step_over, { desc = "DAP: Step Over" })
+vim.keymap.set("n", "<leader>si", dap.step_into, { desc = "DAP: Step Into" })
+vim.keymap.set("n", "<F12>", dap.step_out, { desc = "DAP: Step Out" })
