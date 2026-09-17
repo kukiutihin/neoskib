@@ -30,31 +30,31 @@ function M.setup()
 	})
 
 	-- Golang
-	vim.lsp.config("gopls", {
-		settings = {
-			gopls = {
-				analyses = {
-					unusedparams = true,
-					shadow = true,
-				},
-				staticcheck = true,
-			},
-		},
-		flags = {
-			debounce_text_changes = 150,
-		},
-	})
+	-- vim.lsp.config("gopls", {
+	-- 	settings = {
+	-- 		gopls = {
+	-- 			analyses = {
+	-- 				unusedparams = true,
+	-- 				shadow = true,
+	-- 			},
+	-- 			staticcheck = true,
+	-- 		},
+	-- 	},
+	-- 	flags = {
+	-- 		debounce_text_changes = 150,
+	-- 	},
+	-- })
 
 	-- Default setup for other servers - expect binaries available in PATH (managed by Nix)
 	local servers = {
-		"jdtls",
+		-- "jdtls",
 		"lua_ls", -- installed by default
 		"hls",
-		"gopls",
+		-- "gopls",
 		"rust_analyzer",
 		"clangd",
-		"kotlin_language_server",
-		"ocamllsp",
+		-- "kotlin_language_server",
+		-- "ocamllsp",
 		"tinymist", -- installed by default
 	}
 
