@@ -12,6 +12,7 @@ return {
 		-- mysql = { "sql_formatter" },
 		-- plsql = { "sql_formatter" },
 		cpp = { "clang_format" },
+		c = { "clang_format" },
 		haskell = { "floskell" },
 		nix = { "nixpkgs_fmt" },
 	},
@@ -21,7 +22,10 @@ return {
 		-- },
 
 		clang_format = {
-			prepend_args = { "--style=file", "--fallback-style=GNU" },
+			prepend_args = {
+				"--style=file",
+				"--fallback-style=LLVM",
+			},
 		},
 
 		floskell = {

@@ -29,6 +29,14 @@ function M.setup()
 		},
 	})
 
+	-- Clangd (C / C++)
+	vim.lsp.config("clangd", {
+		on_init = function(client)
+			client.server_capabilities.documentFormattingProvider = false
+			client.server_capabilities.documentRangeFormattingProvider = false
+		end,
+	})
+
 	-- Golang
 	-- vim.lsp.config("gopls", {
 	-- 	settings = {
@@ -49,10 +57,10 @@ function M.setup()
 	local servers = {
 		-- "jdtls",
 		"lua_ls", -- installed by default
-		"hls",
 		-- "gopls",
-		"rust_analyzer",
 		"clangd",
+		"hls",
+		"rust_analyzer",
 		-- "kotlin_language_server",
 		-- "ocamllsp",
 		"tinymist", -- installed by default
