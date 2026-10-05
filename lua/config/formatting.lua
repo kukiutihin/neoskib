@@ -15,6 +15,7 @@ return {
 		c = { "clang_format" },
 		haskell = { "floskell" },
 		nix = { "nixpkgs_fmt" },
+		rust = { "rustfmt" },
 	},
 	formatters = {
 		-- ["google-java-format"] = {

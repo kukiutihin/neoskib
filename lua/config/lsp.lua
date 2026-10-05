@@ -29,6 +29,31 @@ function M.setup()
 		},
 	})
 
+	-- Rust Analyzer
+	vim.lsp.config("rust-analyzer", {
+		settings = {
+			["rust-analyzer"] = {
+				cargo = {
+					buildScripts = { enable = true },
+					extraEnv = {
+						RUSTFLAGS = "--codegen force-frame-pointers=yes "
+							.. "--codegen relocation-model=dynamic-no-pic "
+							.. "--codegen debuginfo=full",
+					},
+				},
+				check = {
+					workspace = false,
+				},
+				diagnostics = {
+					enable = false,
+				},
+				inlayHints = {
+					enable = false,
+				},
+			},
+		},
+	})
+
 	-- Clangd (C / C++)
 	vim.lsp.config("clangd", {
 		on_init = function(client)
