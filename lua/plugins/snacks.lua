@@ -6,8 +6,18 @@ return {
 		picker = {
 			enabled = true,
 			layout = {
-				layout = {
-					width = 0.9,
+				width = 0.9,
+				preset = "ivy",
+			},
+
+			win = {
+				input = {
+					keys = {
+						["<Tab>"] = { "list_down", mode = { "i", "n" } },
+						["<S-Tab>"] = { "list_up", mode = { "i", "n" } },
+
+						["<C-s>"] = { "select_and_next", mode = { "i", "n" } },
+					},
 				},
 			},
 		},

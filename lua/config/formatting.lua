@@ -5,8 +5,7 @@ return {
 	formatters_by_ft = {
 		lua = { "stylua" },
 		-- go = { "goimports", "gofmt" },
-		-- java = { "google-java-format" },
-		-- kotlin = { "ktlint" },
+		java = { "google-java-format" },
 		-- scala = { "scalafmt" },
 		-- sql = { "sql_formatter" },
 		-- mysql = { "sql_formatter" },
@@ -14,13 +13,15 @@ return {
 		cpp = { "clang_format" },
 		c = { "clang_format" },
 		haskell = { "floskell" },
+		-- kotlin = { "ktlint" },
 		nix = { "nixpkgs_fmt" },
 		rust = { "rustfmt" },
 	},
+
 	formatters = {
-		-- ["google-java-format"] = {
-		-- 	args = { "--aosp", "-" },
-		-- },
+		["google-java-format"] = {
+			args = { "--aosp", "-" },
+		},
 
 		clang_format = {
 			prepend_args = {
@@ -36,9 +37,11 @@ return {
 		},
 	},
 
-	format_on_save = {
-		timeout_ms = 500,
-		lsp_fallback = true,
-		quiet = true,
-	},
+	-- format_on_save = {
+	-- 	timeout_ms = 250,
+	-- 	lsp_fallback = false,
+	-- 	quiet = true,
+	-- },
+
+	format_on_save = false,
 }

@@ -10,8 +10,9 @@ v.signcolumn = "yes"
 v.scrolloff = 8
 v.cursorline = true
 
-v.tabstop = 4
-v.shiftwidth = 4
+v.tabstop = 2
+v.shiftwidth = 2
+vim.opt_local.softtabstop = 2
 v.expandtab = true
 v.smartindent = true
 
