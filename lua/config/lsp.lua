@@ -87,7 +87,7 @@ function M.setup()
 		"hls",
 		"rust_analyzer",
 		-- "kotlin_language_server",
-		"jdtls",
+		-- "jdtls",
 		"tinymist", -- installed by default
 	}
 
