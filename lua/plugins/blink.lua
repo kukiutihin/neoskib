@@ -6,7 +6,8 @@ return {
 		require("blink.cmp").setup({
 			keymap = {
 				preset = "default",
-				["<CR>"] = { "accept", "fallback" },
+				["<CR>"] = { "fallback" },
+				["<S-CR>"] = { "accept", "fallback" },
 				["<Tab>"] = { "select_next", "fallback" },
 				["<S-Tab>"] = { "select_prev", "fallback" },
 			},
