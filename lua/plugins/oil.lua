@@ -46,7 +46,8 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<leader>-", "<CMD>Oil<CR>", { desc = "parent directory" })
-		vim.keymap.set("n", "-", require("oil").toggle_float, { desc = "floating" })
+		-- vim.keymap.set("n", "<leader>-", "<CMD>Oil<CR>", { desc = "parent directory" })
+		vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "parent directory" })
+		-- vim.keymap.set("n", "-", require("oil").toggle_float, { desc = "floating" })
 	end,
 }

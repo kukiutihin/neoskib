@@ -16,18 +16,12 @@ return {
 				layouts = {
 					{
 						elements = {
-							{ id = "stacks", size = 0.25 },
-							{ id = "scopes", size = 0.75 },
+							{ id = "repl", size = 0.45 },
+							{ id = "stacks", size = 0.10 },
+							{ id = "scopes", size = 0.45 },
 						},
 						position = "right",
 						size = 0.48,
-					},
-					{
-						elements = {
-							{ id = "repl", size = 1.0 },
-						},
-						position = "bottom",
-						size = 12,
 					},
 				},
 			})

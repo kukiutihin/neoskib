@@ -73,20 +73,14 @@ function M.setup()
 		end,
 	})
 
-	-- vim.lsp.config("kotlin_language_server", {
-	-- 	cmd = { "kotlin-language-server" },
-	-- 	init_options = {
-	-- 		storagePath = vim.fn.stdpath("cache") .. "/kotlin-language-server",
-	-- 	},
-	-- })
 
 	-- Default setup for other servers - expect binaries available in PATH (managed by Nix)
 	local servers = {
 		"lua_ls", -- installed by default
 		"clangd",
 		"hls",
+    "ocamllsp",
 		"rust_analyzer",
-		-- "kotlin_language_server",
 		-- "jdtls",
 		"tinymist", -- installed by default
 	}

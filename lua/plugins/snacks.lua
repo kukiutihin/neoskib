@@ -8,6 +8,10 @@ return {
 			layout = {
 				width = 0.9,
 				preset = "ivy",
+				layout = {
+					height = 0.7, -- 70% of screen height (default for ivy is 0.4)
+					width = 0, -- 90% of screen width (set to 0 for full width)
+				},
 			},
 
 			win = {
