@@ -4,6 +4,7 @@ local modules = {
 	"keymaps.format",
 	"keymaps.typst",
 	"keymaps.dap",
+	"keymaps.bufremove",
 }
 
 for _, mod in ipairs(modules) do

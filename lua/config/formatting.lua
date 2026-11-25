@@ -15,6 +15,7 @@ return {
 		haskell = { "floskell" },
 		-- kotlin = { "ktlint" },
 		nix = { "nixpkgs_fmt" },
+    ocaml = {"ocamlformat"},
 		rust = { "rustfmt" },
 	},
 

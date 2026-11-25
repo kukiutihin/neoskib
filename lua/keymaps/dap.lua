@@ -9,9 +9,13 @@ k({ "n", "v" }, "<leader>de", function()
 	require("dapui").eval()
 end, { desc = "DAP UI: Eval" })
 
-k("n", "<leader>dc", function()
+k("n", "<F5>", function()
 	require("dap").continue()
 end, { desc = "DAP: Continue" })
+
+k("n", "<leader>dr", function()
+	require("dap").restart()
+end, { desc = "DAP: Restart" })
 
 k("n", "<leader>bb", function()
 	require("dap").toggle_breakpoint()

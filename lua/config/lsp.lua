@@ -73,13 +73,19 @@ function M.setup()
 		end,
 	})
 
+	-- Ocaml LSP
+	vim.lsp.config("ocamllsp", {
+		cmd = { "ocamllsp" },
+		filetypes = { "ocaml", "menhir", "ocamlinterface", "ocamllex", "reason", "dune" },
+		root_markers = { "*.opam", "esy.json", "package.json", ".git", "dune-project", "dune-workspace" },
+	})
 
 	-- Default setup for other servers - expect binaries available in PATH (managed by Nix)
 	local servers = {
 		"lua_ls", -- installed by default
 		"clangd",
 		"hls",
-    "ocamllsp",
+		"ocamllsp",
 		"rust_analyzer",
 		-- "jdtls",
 		"tinymist", -- installed by default

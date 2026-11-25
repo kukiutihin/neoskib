@@ -7,6 +7,7 @@ return {
 		},
 		config = function()
 			local dap = require("dap")
+			require("dap.ext.vscode").type_to_filetypes["lldb"] = { "c", "cpp" }
 			local dapui = require("dapui")
 
 			dapui.setup({
@@ -16,9 +17,9 @@ return {
 				layouts = {
 					{
 						elements = {
-							{ id = "repl", size = 0.45 },
-							{ id = "stacks", size = 0.10 },
-							{ id = "scopes", size = 0.45 },
+							{ id = "console", size = 0.30 },
+							{ id = "scopes", size = 0.5 },
+							{ id = "repl", size = 0.2 },
 						},
 						position = "right",
 						size = 0.48,
